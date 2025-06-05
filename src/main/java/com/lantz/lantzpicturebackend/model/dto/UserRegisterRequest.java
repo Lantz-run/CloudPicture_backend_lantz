@@ -33,5 +33,10 @@ public class UserRegisterRequest implements Serializable {
      */
     private String checkPassword;
 
+    /**
+     * 用户昵称
+     */
+    private String userName;
+
 
 }

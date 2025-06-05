@@ -1,10 +1,14 @@
 package com.lantz.lantzpicturebackend.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.lantz.lantzpicturebackend.model.dto.UserQueryRequest;
 import com.lantz.lantzpicturebackend.model.entity.User;
 import com.lantz.lantzpicturebackend.model.vo.LoginUserVO;
+import com.lantz.lantzpicturebackend.model.vo.UserVO;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
 * @author 少年的魂
@@ -20,7 +24,7 @@ public interface UserService extends IService<User> {
      * @param checkPassword 校验密码
      * @return 新用户 id
      */
-    long userRegister(String userAccount, String userPassword, String checkPassword);
+    long userRegister(String userAccount, String userName, String userPassword, String checkPassword);
 
     /**
      * 密码加盐加密
@@ -59,5 +63,26 @@ public interface UserService extends IService<User> {
      * @return
      */
     boolean userLogout(HttpServletRequest request);
+
+    /**
+     * 用户脱敏
+     * @param user
+     * @return
+     */
+    UserVO getUserVO(User user);
+
+    /**
+     * 脱敏用户列表
+     * @param userList
+     * @return
+     */
+    List<UserVO> getUserVOList(List<User> userList);
+
+    /**
+     * 查询用户
+     * @param userQueryRequest
+     * @return
+     */
+    QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest);
 
 }
