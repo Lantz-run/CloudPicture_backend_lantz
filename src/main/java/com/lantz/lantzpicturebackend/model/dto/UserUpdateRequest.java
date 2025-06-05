@@ -19,6 +19,11 @@ public class UserUpdateRequest implements Serializable {
     private static final long serialVersionUID = -9177304111330026816L;
 
     /**
+     * 用户 id
+     */
+    private Long id;
+
+    /**
      * 账号
      */
     private String userAccount;
