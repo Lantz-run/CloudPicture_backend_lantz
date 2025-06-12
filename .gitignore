@@ -1,12 +1,12 @@
+### Custom ###
+application-local.yml
+application-prod.yml
 
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-
-### Custom ###
-src/main/resources/application-local.yml  # 忽略local环境特定配置
 
 ### STS ###
 .apt_generated
