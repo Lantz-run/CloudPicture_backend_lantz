@@ -6,7 +6,7 @@ target/
 !**/src/test/**/target/
 
 ### Custom ###
-application-local.yml
+src/main/resources/application-local.yml  # 忽略所有环境特定配置
 
 ### STS ###
 .apt_generated
