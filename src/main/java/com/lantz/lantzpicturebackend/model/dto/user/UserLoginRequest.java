@@ -1,4 +1,4 @@
-package com.lantz.lantzpicturebackend.model.dto;
+package com.lantz.lantzpicturebackend.model.dto.user;
 
 import lombok.Data;
 
@@ -14,7 +14,7 @@ import java.io.Serializable;
  * @since 1.8
  */
 @Data
-public class UserRegisterRequest implements Serializable {
+public class UserLoginRequest implements Serializable {
 
     private static final long serialVersionUID = -9177304111330026816L;
 
@@ -28,15 +28,6 @@ public class UserRegisterRequest implements Serializable {
      */
     private String userPassword;
 
-    /**
-     * 确认密码
-     */
-    private String checkPassword;
-
-    /**
-     * 用户昵称
-     */
-    private String userName;
 
 
 }

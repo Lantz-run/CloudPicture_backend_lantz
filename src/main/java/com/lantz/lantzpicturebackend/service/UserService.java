@@ -2,7 +2,7 @@ package com.lantz.lantzpicturebackend.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.lantz.lantzpicturebackend.model.dto.UserQueryRequest;
+import com.lantz.lantzpicturebackend.model.dto.user.UserQueryRequest;
 import com.lantz.lantzpicturebackend.model.entity.User;
 import com.lantz.lantzpicturebackend.model.vo.LoginUserVO;
 import com.lantz.lantzpicturebackend.model.vo.UserVO;
@@ -85,4 +85,11 @@ public interface UserService extends IService<User> {
      */
     QueryWrapper<User> getQueryWrapper(UserQueryRequest userQueryRequest);
 
+
+    /**
+     * 是否为管理员
+     * @param user
+     * @return
+     */
+    boolean isAdmin(User user);
 }

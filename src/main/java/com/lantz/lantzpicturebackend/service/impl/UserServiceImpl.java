@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.lantz.lantzpicturebackend.exception.BusinessException;
 import com.lantz.lantzpicturebackend.exception.ErrorCode;
-import com.lantz.lantzpicturebackend.model.dto.UserQueryRequest;
+import com.lantz.lantzpicturebackend.model.dto.user.UserQueryRequest;
 import com.lantz.lantzpicturebackend.model.entity.User;
 import com.lantz.lantzpicturebackend.model.enums.UserRoleEnum;
 import com.lantz.lantzpicturebackend.model.vo.LoginUserVO;
@@ -22,7 +22,6 @@ import org.springframework.util.DigestUtils;
 import javax.servlet.http.HttpServletRequest;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -196,6 +195,11 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         queryWrapper.orderBy(StrUtil.isNotEmpty(sortField), sortOrder.equals("ascend"), sortField);
 
         return queryWrapper;
+    }
+
+    @Override
+    public boolean isAdmin(User user) {
+        return user != null && UserRoleEnum.ADMIN.getValue().equals(user.getUserRole());
     }
 
 

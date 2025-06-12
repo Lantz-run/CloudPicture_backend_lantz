@@ -1,6 +1,8 @@
-package com.lantz.lantzpicturebackend.model.dto;
+package com.lantz.lantzpicturebackend.model.dto.user;
 
+import com.lantz.lantzpicturebackend.exception.PageRequest;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
@@ -13,8 +15,9 @@ import java.io.Serializable;
  * @Description UserRegisterRequest
  * @since 1.8
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
-public class UserUpdateRequest implements Serializable {
+public class UserQueryRequest extends PageRequest implements Serializable {
 
     private static final long serialVersionUID = -9177304111330026816L;
 

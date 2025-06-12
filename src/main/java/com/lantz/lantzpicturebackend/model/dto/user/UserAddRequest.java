@@ -1,11 +1,8 @@
-package com.lantz.lantzpicturebackend.model.dto;
+package com.lantz.lantzpicturebackend.model.dto.user;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * <p>Project: lantz-picture-backend
