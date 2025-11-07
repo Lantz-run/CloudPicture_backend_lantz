@@ -15,24 +15,24 @@ import java.util.List;
  * @since 1.8
  */
 @Data
-public class PictureUploadRequest implements Serializable {
+public class PictureUploadByBatchRequest implements Serializable {
 
     private static final long serialVersionUID = -5030117611211042602L;
 
     /**
-     * id（用于修改）
+     * 搜索关键词
      */
-    private Long id;
+    private String searchText;
 
     /**
-     * 文件地址
+     * 抓取图片数目
      */
-    private String fileUrl;
+    private Integer count = 10;
 
     /**
-     * 图片名字
+     * 图片名字的后缀
      */
-    private String picName;
+    private String namePrefix;
 
     /**
      * 分类
@@ -43,4 +43,5 @@ public class PictureUploadRequest implements Serializable {
      * 标签
      */
     private List<String> tags;
+
 }

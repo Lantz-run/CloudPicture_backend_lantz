@@ -2,9 +2,7 @@ package com.lantz.lantzpicturebackend.service;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.lantz.lantzpicturebackend.model.dto.picture.PictureQueryRequest;
-import com.lantz.lantzpicturebackend.model.dto.picture.PictureReviewRequest;
-import com.lantz.lantzpicturebackend.model.dto.picture.PictureUploadRequest;
+import com.lantz.lantzpicturebackend.model.dto.picture.*;
 import com.lantz.lantzpicturebackend.model.entity.Picture;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.lantz.lantzpicturebackend.model.entity.User;
@@ -75,5 +73,19 @@ public interface PictureService extends IService<Picture> {
      * @param loginUser
      */
     void fillPictureReview(Picture picture, User loginUser);
+
+    /**
+     * 图片编辑
+     * @param pictureEditRequest
+     */
+    void editPicture(PictureEditRequest pictureEditRequest, User loginUser);
+
+    /**
+     * 批量上传图片
+     * @param pictureUploadByBatchRequest
+     * @param loginUser
+     * @return
+     */
+    Integer uploadPictureByBatch(PictureUploadByBatchRequest pictureUploadByBatchRequest, User loginUser);
 
 }
